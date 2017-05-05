@@ -1,0 +1,12 @@
+# object files
+*.o
+
+# VIM files
+*.un~
+
+# ctags generated files
+tags
+
+# namelist and generated chart
+namelist.txt
+seats.csv

@@ -1,0 +1,21 @@
+5 4
+Sample
+aaa
+bbb
+ccc
+ddd
+GitHub
+Random
+Seats
+Generator
+123
+456
+789
+C++
+Linux
+asdf
+qwer
+USE-HYPHENS-OR-UNDERSCORES
+INSTEAD_OF_SPACES
+Author:
+T_H_
