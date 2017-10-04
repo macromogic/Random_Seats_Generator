@@ -1,5 +1,7 @@
 #include <iostream>
+#include <iomanip>
 #include <vector>
+#include <set>
 #include <string>
 #include <algorithm>
 #include <cstdlib>
@@ -7,9 +9,8 @@
 
 using namespace std;
 
-vector<string> vect;
 
-int base = 0;
+// int base = 0;
 
 /*
 class rand_gen
@@ -21,28 +22,44 @@ class rand_gen
 };
 */
 
-int main()
+int main(int c, char ** argv)
 {
     int lines, rows;
     cin >> lines >> rows;
-    base = lines * rows;
-    vect.resize(base);
+    // base = lines * rows;
+    // vect.resize(base);
+    vector<string> vect;
     string tmp;
-    int i = 0;
-    while (cin >> tmp && i < base)
+    // int i = 0;
+    while (cin >> tmp && tmp[0] != '-')
     {
-        vect[i++] = tmp;
+        // vect[i++] = tmp;
+        vect.push_back(tmp);
     }
+
+    set<pair<int, int> > empty_seat;
+    int x, y;
+    while (cin >> x >> y)
+        empty_seat.insert(make_pair(x, y));
 
     srand(time(0));
     rand();
     random_shuffle(vect.begin(), vect.end());
 
-    for (int j = 0; j < rows; ++j)
+    for (int j = 0, cnt = 0; j < rows; ++j)
     {
         for (int k = 0; k < lines; ++k)
         {
-            cout << vect[j * lines + k] << ",";
+            string cur;
+            if (empty_seat.count(make_pair(j, k)))
+                cur = "";
+            else
+                cur = vect[cnt++];
+
+            if (c > 1)
+                cout << setw(10) << cur;
+            else
+                cout << cur << ",";
         }
         cout << endl;
     }
