@@ -9,31 +9,14 @@
 
 using namespace std;
 
-
-// int base = 0;
-
-/*
-class rand_gen
-{
-    int operator()()
-    {
-        return rand() % base;
-    }
-};
-*/
-
 int main(int c, char ** argv)
 {
     int lines, rows;
     cin >> lines >> rows;
-    // base = lines * rows;
-    // vect.resize(base);
     vector<string> vect;
     string tmp;
-    // int i = 0;
     while (cin >> tmp && tmp[0] != '-')
     {
-        // vect[i++] = tmp;
         vect.push_back(tmp);
     }
 
