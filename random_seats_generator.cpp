@@ -29,6 +29,7 @@ int main(int c, char ** argv)
     rand();
     random_shuffle(vect.begin(), vect.end());
 
+	cout << ",,Platform" << endl;
     for (int j = 0, cnt = 0; j < rows; ++j)
     {
         for (int k = 0; k < lines; ++k)
@@ -46,5 +47,13 @@ int main(int c, char ** argv)
         }
         cout << endl;
     }
+
+    time_t theTime = time(0);
+    tm * aTime = localtime(&theTime);
+	cout << aTime->tm_mday << '-'
+	     << aTime->tm_mon + 1 << '-'
+	     << "2018\n";
+    
+    // cout << time(0) << endl;  
     return 0;
 }
